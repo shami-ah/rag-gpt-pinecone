@@ -1,4 +1,5 @@
 openai
 langchain
-pinecone-client
+pinecone>=3.0.0
 tiktoken
+langchain-community

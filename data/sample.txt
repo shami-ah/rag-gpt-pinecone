@@ -1,0 +1,7 @@
+Artificial Intelligence (AI) is transforming the way industries operate across the world. From healthcare to transportation, AI is helping optimize processes, improve decision-making, and deliver better outcomes.
+
+One major application of AI is in natural language processing, which allows machines to understand and generate human language. Tools like ChatGPT can summarize documents, answer questions, and even hold meaningful conversations.
+
+Another key advancement is the use of vector databases like Pinecone, which enable fast and accurate retrieval of relevant data by storing semantic embeddings. When combined with powerful models like OpenAI's GPT, this forms the basis of Retrieval-Augmented Generation (RAG).
+
+In a RAG system, documents are converted into vector embeddings and stored in Pinecone. When a user inputs a query, the system retrieves the most relevant pieces of information and feeds them into GPT to generate a useful response. This ensures that the AI outputs are grounded in real data.
