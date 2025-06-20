@@ -1,7 +1,8 @@
-# src/config.py
+import os
+from dotenv import load_dotenv
 
-# Placeholder keys — replace these later
-OPENAI_API_KEY = "your-openai-api-key"
-PINECONE_API_KEY = "your-pinecone-api-key"
-PINECONE_ENVIRONMENT = "your-pinecone-environment"
-PINECONE_INDEX_NAME = "your-index-name"
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_ENV = os.getenv("PINECONE_ENV")

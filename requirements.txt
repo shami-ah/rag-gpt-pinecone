@@ -1,5 +1,8 @@
 openai
 langchain
-pinecone>=3.0.0
-tiktoken
+langchain-openai
+langchain-pinecone
 langchain-community
+pinecone-client>=3.0.0
+tiktoken
+python-dotenv

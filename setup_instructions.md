@@ -1,29 +1,49 @@
-INSTRUCTIONS - How to Run the RAG Pipeline on Your PC
+Windows Setup Instructions for RAG Pipeline
 
-1. Open Git Bash / Terminal and clone the GitHub repository:
-   git clone https://github.com/Shami4004/rag-gpt-pinecone.git
+Follow these instructions to set up the Retrieval-Augmented Generation (RAG) pipeline on Windows.
+	1.	Install Requirements:
 
-2. Navigate into the folder:
-   cd rag-gpt-pinecone
+	•	Python 3.9+ from https://www.python.org
+	•	Git from https://git-scm.com/download/win
+	•	Get your API keys:
+	•	OpenAI: https://platform.openai.com/account/api-keys
+	•	Pinecone: https://app.pinecone.io/
 
-3. Set up the virtual environment:
-   python -m venv env
+	2.	Clone the Project:
+Open Command Prompt or PowerShell:
+git clone https://github.com/your-org/rag-gpt-pinecone.git
+cd rag-gpt-pinecone
+	3.	Create and Activate Virtual Environment:
+python -m venv env
+.\env\Scripts\activate
+	4.	Install Dependencies:
+pip install -r requirements.txt
+	5.  Rename .env.example to .env
+	6.	Replace your-openai-api-key-here and your-pinecone-api-key-here with your actual API keys.
 
-4. Activate the environment:
-   - For Windows: env\Scripts\activate
-   - For Mac/Linux: source env/bin/activate
+Note: If you face errors like “Pinecone not found”, do this:
+pip uninstall pinecone-client
+pip install pinecone
+	5.	Configure .env File:
+Rename .env.example to .env
+Edit .env and add your keys:
+OPENAI_API_KEY=sk-xxxxx
+PINECONE_API_KEY=your-pinecone-key
+	6.	Update Sample Text:
+Edit the raw_text in rag_pipeline.py or use your own file.
+	7.	Run the Script:
+python src/rag_pipeline.py
 
-5. Install all required packages:
-   pip install -r requirements.txt
+Common Issues:
+	•	Pinecone ImportError:
+Uninstall old client:
+pip uninstall pinecone-client
+Install the new one:
+pip install pinecone
+	•	ChatOpenAI Warning:
+Update LangChain-OpenAI:
+pip install -U langchain-openai
 
-6. Add your API keys in a `.env` file in the root folder:
-   OPENAI_API_KEY=your_openai_key
-   PINECONE_API_KEY=your_pinecone_key
-   PINECONE_ENV=your_pinecone_environment_id
-
-7. Add a test document in: `data/sample.txt`
-
-8. Run the RAG pipeline:
-   python src/rag_pipeline.py
-
-If you need support with environment setup, please let me know.
+Support:
+Muhammad Ahtesham Ahmad
+Email: iamshami1996@gmail.com
