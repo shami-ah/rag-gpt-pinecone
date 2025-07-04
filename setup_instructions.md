@@ -1,49 +1,67 @@
-Windows Setup Instructions for RAG Pipeline
+Windows & Docker Setup Instructions for RAG Pipeline
 
-Follow these instructions to set up the Retrieval-Augmented Generation (RAG) pipeline on Windows.
-	1.	Install Requirements:
+🚀 Overview
 
-	•	Python 3.9+ from https://www.python.org
-	•	Git from https://git-scm.com/download/win
-	•	Get your API keys:
-	•	OpenAI: https://platform.openai.com/account/api-keys
-	•	Pinecone: https://app.pinecone.io/
+This guide will help you set up the Retrieval-Augmented Generation (RAG) pipeline using GPT and Pinecone on your Windows 10 PC. You can run it either via local Python or using the recommended Docker setup.
 
-	2.	Clone the Project:
-Open Command Prompt or PowerShell:
-git clone https://github.com/your-org/rag-gpt-pinecone.git
+⸻
+
+✅ Prerequisites
+	1.	Python 3.9+ – Download from python.org
+	2.	Git – Download from git-scm.com
+	3.	Docker Desktop (if using Docker) – Download here
+	4.	API Keys
+	•	OpenAI: Get your API key
+	•	Pinecone: Get your API key
+
+⸻
+
+💻 Local Python Setup (No Docker)
+
+1. Clone the Project
+git clone https://github.com/shami-ah/rag-gpt-pinecone.git
 cd rag-gpt-pinecone
-	3.	Create and Activate Virtual Environment:
+2. Set Up Virtual Environment
 python -m venv env
 .\env\Scripts\activate
-	4.	Install Dependencies:
+3. Install Dependencies
 pip install -r requirements.txt
-	5.  Rename .env.example to .env
-	6.	Replace your-openai-api-key-here and your-pinecone-api-key-here with your actual API keys.
-
-Note: If you face errors like “Pinecone not found”, do this:
-pip uninstall pinecone-client
-pip install pinecone
-	5.	Configure .env File:
-Rename .env.example to .env
-Edit .env and add your keys:
-OPENAI_API_KEY=sk-xxxxx
-PINECONE_API_KEY=your-pinecone-key
-	6.	Update Sample Text:
-Edit the raw_text in rag_pipeline.py or use your own file.
-	7.	Run the Script:
+4. Configure Environment Variables
+	•	Rename .env.template → .env
+	•	Open .env and add your keys:
+	 OPENAI_API_KEY=sk-xxxxxxxx
+     PINECONE_API_KEY=your-pinecone-key
+5. Run the RAG Pipeline
 python src/rag_pipeline.py
+Docker Setup (Recommended)
 
-Common Issues:
-	•	Pinecone ImportError:
-Uninstall old client:
+1. Prepare Environment Variables
+	•	Copy .env.template → .env
+	•	Fill in your API keys inside .env
+
+2. Build and Run with Docker
+docker-compose up --build
+This will:
+	•	Install dependencies inside the container
+	•	Run the rag_pipeline.py script
+	•	Show your query result directly in the terminal
+
+⸻
+
+🧪 Customizing Your Data
+	•	To use your own text or dataset, modify the raw_text in src/rag_pipeline.py, or add logic to load from a file.
+
+⸻
+
+🧯 Troubleshooting
+
+Pinecone Errors?
 pip uninstall pinecone-client
-Install the new one:
 pip install pinecone
-	•	ChatOpenAI Warning:
-Update LangChain-OpenAI:
+ChatOpenAI Warnings?
 pip install -U langchain-openai
 
-Support:
+Support
+
 Muhammad Ahtesham Ahmad
-Email: iamshami1996@gmail.com
+✉️ iamshami1996@gmail.com
