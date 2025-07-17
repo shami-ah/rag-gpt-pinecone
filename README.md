@@ -21,28 +21,14 @@ rag-gpt-pinecone/
 └── src/
 └── rag_pipeline.py  –> Main pipeline script
 
-Quick Start:
-	1.	Clone the Repository:
-git clone https://github.com/your-org/rag-gpt-pinecone.git
-cd rag-gpt-pinecone
-	2.	Create a Virtual Environment:
-python -m venv env
-source env/bin/activate  (or env\Scripts\activate on Windows)
-	3.	Install Dependencies:
-pip install -r requirements.txt
-	4.	Configure Environment:
-Rename .env.example to .env and add:
-OPENAI_API_KEY=your_openai_key
-PINECONE_API_KEY=your_pinecone_key
-	5.	Add Your Text:
-Edit the raw_text section in rag_pipeline.py or load your file.
-	6.	Run the Pipeline:
-python src/rag_pipeline.py
+# How to Use This App
 
-Expected Output Example:
-✅ Successfully added documents to Pinecone using new API.
-📄 Query Result:
-The sample text is about LangChain enabling retrieval-augmented generation (RAG) with Pinecone, which is useful for LLM-powered apps.
+1. **Install Docker Desktop**: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+2. **Double-click `run.bat`** file
+3. Wait for it to open your browser at `http://localhost:7860`
+4. Enter your **API Key**, **upload your file**, and **ask your question**
+5. You’re done — no coding or command line needed!
+
 
 Author:
 Muhammad Ahtesham Ahmad
